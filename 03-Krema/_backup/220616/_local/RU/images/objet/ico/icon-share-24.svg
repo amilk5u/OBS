@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-200.000000, -136.000000)">
+            <g id="ic_Share_Black_24" transform="translate(200.000000, 136.000000)">
+                <g>
+                    <rect id="Area" x="0" y="0" width="24" height="24"></rect>
+                    <g id="Shear" transform="translate(4.500000, 4.000000)" stroke="#000000">
+                        <circle id="Oval" cx="2.5" cy="7.64285714" r="2"></circle>
+                        <circle id="Oval" cx="11.9285714" cy="2.5" r="2"></circle>
+                        <circle id="Oval" cx="11.9285714" cy="12.7857143" r="2"></circle>
+                        <line x1="4.18046906" y1="8.29273315" x2="10.2307788" y2="12.0340397" id="Path-3"></line>
+                        <line x1="4.43374441" y1="7.03595497" x2="10.3885714" y2="3.6723515" id="Path-8"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
