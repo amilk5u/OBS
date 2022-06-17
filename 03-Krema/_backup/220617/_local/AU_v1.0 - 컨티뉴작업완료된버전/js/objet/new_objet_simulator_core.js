@@ -715,16 +715,6 @@ var userSelectedModelData = [];
 		selectedBackground: []
 	};
 
-	/* 220616 start 이전컬러세팅 */
-	// 컬러 변수
-	let colorPanelHistory = {
-		prevSelectColorCode: '',
-		ID: '',
-		targetId: '',
-		selectedDifferentColorCode: false
-	}
-	/* 220616 end 이전컬러세팅 */
-
 	var proposeSetObjetSelections = [     // 인기 조합 데이터
 		{
 			id: 'refrigerator', // 1026
@@ -1381,23 +1371,6 @@ var userSelectedModelData = [];
 		}
 	];
 
-
-	/* 220616 start 이전컬러세팅 */
-	// 컨티뉴 클릭
-	$(".btn_continue").on("click", function () {
-		console.log("컨티뉴클릭-------------------------!!");
-		if (colorPanelHistory.selectedDifferentColorCode) {
-			console.log("컬러 O");
-			_self.setObject(colorPanelHistory.ID, colorPanelHistory.targetId, colorPanelHistory.prevSelectColorCode);
-			$("#" + colorPanelHistory.targetId + "").val(colorPanelHistory.prevSelectColorCode)
-		} else {
-			console.log("컬러 X");
-		}
-		// 팝업 숨김
-		$(".color_warning_popup").closest(".layer_popup").fadeOut();
-	});
-	/* 220616 end 이전컬러세팅 */
-
 	//배열 내 오브젝트 index 참조용 함수
 	function findIndexByKeyValue(_array, key, value) {
 		if (_array.length == 'undefined')
@@ -1409,6 +1382,27 @@ var userSelectedModelData = [];
 		}
 		return -1;
 	}
+
+
+	/* 220616 start */
+	// 컬러 변수
+	let userSelectedData = {
+		prevSelectColorCode: '',
+		ID: '',
+		targetId: '',
+		selectedDifferentColorCode : false
+	}
+	// 컨티뉴 클릭
+	$(".btn_continue").on("click", function () {
+		console.log("컨티뉴클릭-------------------------!!");
+		if (userSelectedData.selectedDifferentColorCode) {
+			console.log("컬러 O");
+			_self.setObject(userSelectedData.ID, userSelectedData.targetId, userSelectedData.prevSelectColorCode);
+		} else {
+			console.log("컬러 X");
+		}
+	});
+	/* 220616 end */
 
 	// @pck 2020-10-19 컬러코드로 그룹 찾기
 	function findGroupIndexByColorCode(objectIndex, colorCode) {
@@ -1710,7 +1704,8 @@ var userSelectedModelData = [];
 				//@2022-05-18 simulator load 시, 본품컬러 default 세팅 (e)
 
 
-				/* 220616 start 이전컬러세팅 */
+
+				/* 220616 start */
 				//오브젝트 세팅 후 클릭 이벤트 바인딩
 				var tmpObject = document.querySelectorAll('.object-app');
 
@@ -1721,33 +1716,29 @@ var userSelectedModelData = [];
 							if (this.classList.contains('selected')) this.classList.remove('selected');
 							_self.selectObject(this.dataset.object, this.dataset.objectSelector);
 
-							// refrigerator 일때만 해당사항 적용되야함.
-							if (this.getAttribute('data-object') === 'refrigerator') {
-								var tmpObjectBtn = document.querySelectorAll('.btn-objet');
+							var tmpObjectBtn = document.querySelectorAll('.btn-objet');
+							console.log('패널 클릭 ----------------------------------------------------------')
 
-								console.log('패널 클릭 ----------------------------------------------------------')
-								for (let i = 0; i < tmpObjectBtn.length; i++) {
-									if (tmpObjectBtn[i].classList.contains('active')) {
-										colorPanelHistory.prevSelectColorCode = tmpObjectBtn[i].getAttribute('data-color-code');
-									}
+							console.log("selectedDifferentColorCode : ", userSelectedData.selectedDifferentColorCode);
+
+							for (let i = 0; i < tmpObjectBtn.length; i++) {
+								if (tmpObjectBtn[i].classList.contains('active')) {
+									userSelectedData.prevSelectColorCode = tmpObjectBtn[i].getAttribute('data-color-code');
 								}
-								if (this.classList.contains('select')) {
-									console.log("컬러 O");
-									// $(".btn_continue").css("display","block");
-									colorPanelHistory.selectedDifferentColorCode = true;
-									console.log('prevSelectColorCode : ', colorPanelHistory.prevSelectColorCode);
-								} else {
-									console.log("컬러 X");
-									// $(".btn_continue").css("display","none");
-									colorPanelHistory.selectedDifferentColorCode = false;
-									colorPanelHistory.prevSelectColorCode = null;
-									console.log('prevSelectColorCode : ', colorPanelHistory.prevSelectColorCode);
-								}
-								console.log("selectedDifferentColorCode : ", colorPanelHistory.selectedDifferentColorCode);
+							}
+							if (this.classList.contains('select')) {
+								console.log("컬러 O");
+								userSelectedData.selectedDifferentColorCode = true;
+								console.log('prevSelectColorCode : ', userSelectedData.prevSelectColorCode);
+							} else {
+								console.log("컬러 X");
+								userSelectedData.selectedDifferentColorCode = false;
+								userSelectedData.prevSelectColorCode = null;
+								console.log('prevSelectColorCode : ', userSelectedData.prevSelectColorCode);
 							}
 						});
 					}
-					/* 220616 end 이전컬러세팅 */
+					/* 220616 end */
 
 
 					//@2022-05-18 패널선택유도 아이콘 표시 (s)
@@ -1810,8 +1801,8 @@ var userSelectedModelData = [];
 			var _self = this;
 
 			/* 220616 start */
-			colorPanelHistory.ID = ID;
-			colorPanelHistory.targetId = targetID;
+			userSelectedData.ID = ID;
+			userSelectedData.targetId = targetID;
 			/* 220616 end */
 
 			if (ID == null)
@@ -2007,7 +1998,7 @@ var userSelectedModelData = [];
 					//if(colorWarningPopup.classList.contains('actived')) colorWarningPopup = false;
 
 					if (colorWarningPopup) {
-						console.log("팝업창 오픈");
+						console.log("팝업창 오픈;;;;")
 
 						colorWarningPopup.style.display = 'block';
 						colorWarningPopup.classList.add('actived');
@@ -2052,27 +2043,27 @@ var userSelectedModelData = [];
 
 			//@pck 2020-10-19
 			//기존 선택 표시 부 selected 상태 추가 삭제
-			/* 220616 start 이전컬러세팅 */
 			var objects = document.querySelectorAll('.object-app');
-			let selectRefrigerator;
 			if (objects.length > 0) {
 				for (var i = 0; i < objects.length; i++) {
 					if (objects[i].classList.contains('active') || isFavSet) {
 						objects[i].classList.add('selected', 'select'); // @pck 2020-11-01 기존 선택 된 적이 있을 경우 상태 select 클래스 추가
-						selectRefrigerator = objects[i].getAttribute('data-object') === 'refrigerator';
 					}
 				}
 			}
 
+
+			/* 220616 start */
 			// 컬러 클릭!!
-			if (!colorWarningPopup && selectRefrigerator) {
-				console.log('컬러 O');
-				colorPanelHistory.selectedDifferentColorCode = true;
-				colorPanelHistory.prevSelectColorCode = colorCode;
-				console.log("selectedDifferentColorCode : ", colorPanelHistory.selectedDifferentColorCode);
-				console.log("prevSelectColorCode : ", colorPanelHistory.prevSelectColorCode);
+			console.log("컬러 클릭!-----------------------------------------------")
+			if (!colorWarningPopup) {
+				userSelectedData.selectedDifferentColorCode = true;
+				userSelectedData.prevSelectColorCode = colorCode;
+				console.log("prevSelectColorCode : ", userSelectedData.prevSelectColorCode)
 			}
-			/* 220616 end 이전컬러세팅 */
+			console.log("selectedDifferentColorCode : ", userSelectedData.selectedDifferentColorCode)
+			/* 220616 end */
+
 
 			return true;
 		},
@@ -2325,10 +2316,7 @@ var userSelectedModelData = [];
 
 			/* 220607 start */
 			if (targetSideBarArea !== null && window.Scrollbar) {
-
 				if (window.Scrollbar.has(targetSideBarArea)) {
-
-
 
 					window.Scrollbar.get(targetSideBarArea).destroy();
 
@@ -2457,22 +2445,6 @@ var userSelectedModelData = [];
 					window.Scrollbar.init(targetSideBarArea);
 				}
 
-				/* 220616 start 이전컬러세팅 */
-				// 다른냉장고 선택 후 현냉장고 선택 시 
-				var tmpObject = document.querySelectorAll('.object-app');
-				var tmpObjectBtn = document.querySelectorAll('.btn-objet');
-				if (ID === "refrigerator") {
-					for (let i = 0; i < tmpObjectBtn.length; i++) {
-						if (tmpObjectBtn[i].classList.contains('active')) {
-							colorPanelHistory.prevSelectColorCode = tmpObjectBtn[i].getAttribute('data-color-code');
-						}
-					}
-					console.log("prevSelectColorCode", colorPanelHistory.prevSelectColorCode)
-				}
-				/* 220616 end 이전컬러세팅 */
-
-
-
 				//@2022-05-18 선택값에 따라 select_objet 타이틀 변경 (s)
 				var objectColorPopupTitle = document.querySelector('[data-simulator-sidebar-title]'),
 					activeObjetSelector = "";
@@ -2571,29 +2543,25 @@ var userSelectedModelData = [];
 					tmpObject[i].addEventListener('click', objectActive.bind(this));
 				}
 			}
+
 			// 소재와 컬러 선택 부 (e)
 
-
-			/* 220616 start 리프레시 수정 */
-			let objects = document.querySelectorAll('.object-app'); // 패널 엘리먼트
+			//@2022-05-18 Glass → 본품 선택시, refresh 버튼 초기화 기능 테스트중 (s)
 			$(".btn_refresh").on("click", function () {
 				// 장바구니 데이터 삭제
 				for (var i = 0; i < userSelectedModelData.length; i++) {
 					if (userSelectedModelData[i].selectedObject_id == "refrigerator") userSelectedModelData.splice(i, 1);
 				}
 				// 선택값 초기화
-				_self.resetSelectedObject('refrigerator');
-				for (var i = 0; i < objects.length; i++) {
-					objects[i].classList.remove('select');
-				}
+				simulator.resetSelectedObject('refrigerator');
 				// 팝업 숨김
 				$(".color_warning_popup").closest(".layer_popup").fadeOut();
 			});
-			/* 220616 end 리프레시 수정 */
-
+			//@2022-05-18 Glass → 본품 선택시, refresh 버튼 초기화 기능 테스트중 (e)
 
 			//@2022-05-18 본품컬러 일괄선택 기능추가 (s)
-			let tmpObjectTarget = document.querySelectorAll('.btn-objet'); // 컬러 엘리먼트						
+			let tmpObjectTarget = document.querySelectorAll('.btn-objet'); // 컬러 엘리먼트			
+			let objects = document.querySelectorAll('.object-app'); // 패널 엘리먼트
 
 			// 본품 컬러 선택하기 버튼
 			$(".mainColorSet").on("click", function () {
