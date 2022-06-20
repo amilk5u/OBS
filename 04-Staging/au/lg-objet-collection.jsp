@@ -482,12 +482,15 @@
 													<!-- @2022-06-07 타이틀 위첨자 수정 (e) -->
 												</div>
 												<div class="pop_cont">
-													<p class="empty_txt"> Since each material has a different texture, we recommend a combination of the same materials. </p>
+													<p class="empty_txt"> Since each material has a different texture, <br> we recommend a combination of the same materials. </p>
 												</div>
 												<button type="button" class="btn_close"><span class="blind">close</span></button>
-												<!-- @2022-05-18 Glass → 본품 선택시, refresh 버튼 초기화 기능 테스트중 (s) -->
-												<!-- <button type="button" class="btn_refresh">refresh</button> -->
-												<!-- @2022-05-18 Glass → 본품 선택시, refresh 버튼 초기화 기능 테스트중 (e) -->
+												<!-- @2022-06-20 refresh, continue 버튼 추가 (s) -->
+												<div class="btn_wrap">
+													<button type="button" class="btn_continue">Continue</button>
+													<button type="button" class="btn_refresh">Refresh</button>
+												</div>
+												<!-- @2022-06-20 refresh, continue 버튼 추가 (e) -->
 											</div>
 										</div>
 										<!-- @2022-06-03 타이틀 수정 (e) -->

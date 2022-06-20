@@ -288,6 +288,12 @@
 .inner_contents .layer_popup .pop_inner .pop_cont .coming_soon { padding-top:70px; text-align:center; font-size:15px; color:#505050; background:url(../../images/objet/ico/ico_coming_soon.png) center top no-repeat; } 
 .inner_contents .layer_popup .pop_inner .btn_close { position:absolute; right:16px; top:16px; width:16px; height:16px; background: url(../../images/objet/ico/gnb-close.svg) no-repeat 50% 50%; background-size: 12px 12px; } 
 
+/* @2022-06-20 refresh, continue 버튼 추가 (s) */
+.inner_contents .layer_popup.color_warning_popup .btn_wrap { padding: 15px 15px 0; margin-top: 0; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-line-pack: normal; align-content: normal; }
+.inner_contents .layer_popup.color_warning_popup .btn_wrap > button:first-of-type { background-color: #6b6b6b; }
+.inner_contents .layer_popup.color_warning_popup .btn_wrap > button  { width: 100%; background-color: #a50034; color: #fff; font-weight: 500; font-size: 13px; font-family: "LG Smart","Segoe UI","Microsoft Sans Serif",sans-serif; min-width: 80px; padding: 11px 0; border-radius: 3px; border: 1px solid transparent; font-style: normal; font-weight: 700; font-size: 14px; line-height: 16px; margin: 0 0.5rem 0 0; display: -webkit-box; display: -ms-flexbox; display: flex; padding: 11px 5px; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; height: inherit; word-break: break-word; }
+/* @2022-06-20 refresh, continue 버튼 추가 (e) */
+
 .inner_contents.layer_popup .pop_inner { padding:40px 16px; } 
 #purchase_popup .purchase_list { padding-top:17px; max-height:60vh; overflow:auto; } 
 #purchase_popup .purchase_list ul { display:flex; max-width:321px; flex-wrap: wrap; margin:0 auto; } 
@@ -330,6 +336,11 @@
 .inner_contents .layer_popup .pop_inner .pop_tit h2 { font-size:14px; } 
 .inner_contents .layer_popup .pop_inner .pop_cont .empty_txt { padding-top:50px; font-size:12px; background-size:33px; } 
 .inner_contents .layer_popup .pop_inner .pop_cont .coming_soon { padding-top:50px; font-size:12px; background-size:33px; } 
+
+/* @2022-06-20 refresh, continue 버튼 추가 (s) */
+.inner_contents .layer_popup.color_warning_popup .btn_wrap { max-width: 350px; margin: 0 auto; }
+/* @2022-06-20 refresh, continue 버튼 추가 (e) */
+
 #purchase_popup.layer_popup .pop_inner { padding:20px 8px; } 
 #purchase_popup .purchase_list { padding-top:11px; } 
 #purchase_popup .purchase_list ul { width:100%; max-width:100%; } 

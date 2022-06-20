@@ -1383,7 +1383,7 @@ var userSelectedModelData = [];
 
 
 	/* 220616 start 이전컬러세팅 */
-	// 컨티뉴 클릭
+	// Continue Click
 	$(".btn_continue").on("click", function () {
 		console.log("컨티뉴클릭-------------------------!!");
 		if (colorPanelHistory.selectedDifferentColorCode) {
@@ -1709,19 +1709,19 @@ var userSelectedModelData = [];
 				$("#refrigerator_convertible_M").val("st_silver"); */
 				//@2022-05-18 simulator load 시, 본품컬러 default 세팅 (e)
 
-
-				/* 220616 start 이전컬러세팅 */
+				
 				//오브젝트 세팅 후 클릭 이벤트 바인딩
 				var tmpObject = document.querySelectorAll('.object-app');
 
 				if (tmpObject !== null) {
+					/* 220616 start 이전컬러세팅 */
 					for (var i = 0; i < tmpObject.length; i++) {
 						tmpObject[i].addEventListener('click', function () {
 							//console.log('clicked objet sub selection : ' + this.dataset.objectSelector);
 							if (this.classList.contains('selected')) this.classList.remove('selected');
 							_self.selectObject(this.dataset.object, this.dataset.objectSelector);
 
-							// refrigerator 일때만 해당사항 적용되야함.
+							// refrigerator 일때만 해당사항 적용.
 							if (this.getAttribute('data-object') === 'refrigerator') {
 								var tmpObjectBtn = document.querySelectorAll('.btn-objet');
 
@@ -2054,7 +2054,7 @@ var userSelectedModelData = [];
 			//기존 선택 표시 부 selected 상태 추가 삭제
 			/* 220616 start 이전컬러세팅 */
 			var objects = document.querySelectorAll('.object-app');
-			let selectRefrigerator;
+			var selectRefrigerator;
 			if (objects.length > 0) {
 				for (var i = 0; i < objects.length; i++) {
 					if (objects[i].classList.contains('active') || isFavSet) {
@@ -2064,7 +2064,7 @@ var userSelectedModelData = [];
 				}
 			}
 
-			// 컬러 클릭!!
+			// Color Click
 			if (!colorWarningPopup && selectRefrigerator) {
 				console.log('컬러 O');
 				colorPanelHistory.selectedDifferentColorCode = true;
@@ -2458,7 +2458,7 @@ var userSelectedModelData = [];
 				}
 
 				/* 220616 start 이전컬러세팅 */
-				// 다른냉장고 선택 후 현냉장고 선택 시 
+				// 다른 제품 클릭 후 선택 후 refrigerator 클릭 시 
 				var tmpObject = document.querySelectorAll('.object-app');
 				var tmpObjectBtn = document.querySelectorAll('.btn-objet');
 				if (ID === "refrigerator") {
@@ -2470,7 +2470,6 @@ var userSelectedModelData = [];
 					console.log("prevSelectColorCode", colorPanelHistory.prevSelectColorCode)
 				}
 				/* 220616 end 이전컬러세팅 */
-
 
 
 				//@2022-05-18 선택값에 따라 select_objet 타이틀 변경 (s)
@@ -2565,14 +2564,12 @@ var userSelectedModelData = [];
 			}
 
 			var tmpObject = document.querySelectorAll('.btn-objet');
-
 			if (tmpObject.length > 0) {
 				for (var i = 0; i < tmpObject.length; i++) {
 					tmpObject[i].addEventListener('click', objectActive.bind(this));
 				}
 			}
 			// 소재와 컬러 선택 부 (e)
-
 
 			/* 220616 start 리프레시 수정 */
 			let objects = document.querySelectorAll('.object-app'); // 패널 엘리먼트
@@ -2583,8 +2580,11 @@ var userSelectedModelData = [];
 				}
 				// 선택값 초기화
 				_self.resetSelectedObject('refrigerator');
+				// select class 삭제
 				for (var i = 0; i < objects.length; i++) {
-					objects[i].classList.remove('select');
+					if (objects[i].getAttribute('data-object') === 'refrigerator') {
+						objects[i].classList.remove('select');
+					}
 				}
 				// 팝업 숨김
 				$(".color_warning_popup").closest(".layer_popup").fadeOut();
@@ -2593,8 +2593,6 @@ var userSelectedModelData = [];
 
 
 			//@2022-05-18 본품컬러 일괄선택 기능추가 (s)
-			let tmpObjectTarget = document.querySelectorAll('.btn-objet'); // 컬러 엘리먼트						
-
 			// 본품 컬러 선택하기 버튼
 			$(".mainColorSet").on("click", function () {
 				let mainColorSetID = $(this).attr('id');
@@ -2640,11 +2638,11 @@ var userSelectedModelData = [];
 					}
 				}
 				// 현재 선택된 컬러 값과 active 매칭
-				for (let i = 0; i < tmpObjectTarget.length; i++) {
-					if (tmpObjectTarget[i].getAttribute('data-color-code') === selectColor) {
-						tmpObjectTarget[i].classList.add('active');
+				for (let i = 0; i < tmpObject.length; i++) {
+					if (tmpObject[i].getAttribute('data-color-code') === selectColor) {
+						tmpObject[i].classList.add('active');
 					} else {
-						tmpObjectTarget[i].classList.remove('active');
+						tmpObject[i].classList.remove('active');
 					}
 				}
 			}
