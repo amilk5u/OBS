@@ -2335,8 +2335,6 @@ var userSelectedModelData = [];
 					//@2022-05-18 본품컬러 일괄선택 추가 (s)
 					var model_price;
 
-
-					/* 220621 start */
 					if (ID === "refrigerator") {
 						for (var i = 0; i < configData.object.length; i++) {
 							if (configData.object[i].id === "refrigerator") {
@@ -2345,11 +2343,10 @@ var userSelectedModelData = [];
 						}
 
 						collectionHtml += '<div class="collection_wrap">';
-						collectionHtml += '<p class="only_pc">Customise your material and colours</p> <p class="only_mobile">Customise </br> your material and colours</p>';
-						collectionHtml += "<div class='main_color_wrap'> ";
+						collectionHtml += "<div class='main_color_wrap'> <p class='main_tooltip'>LG's recommended colour</p>";
 						collectionHtml += '<div class="img_wrap"> <img src="https://www.lg.com/au/images/objet/simulator/appliances/rf/ico/refrigerator_img.png" alt=""/></div>';
 						collectionHtml += '<div class="txt_wrap"> <span>LG InstaView Objet® Collection</span> <p>617L French Door Fridge </br>Green & Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
-						collectionHtml += '<div class="btn_wrap"> <div class="small_panel"><img src="https://www.lg.com/au/images/objet/simulator/color_02st_green.png"/><img src="https://www.lg.com/au/images/objet/simulator/color_02st_silver.png"/><img src="https://www.lg.com/au/images/objet/simulator/color_02st_silver.png"/> </div> <button type="button" class="btn_modelRestBtn" data-objet-id="refrigerator" data-setting-btn="refrigeratorSetBtn"><span>Try it</span></button> </div> </div></div>';
+						collectionHtml += '<div class="btn_wrap"> <button type="button" class="btn_modelRestBtn" data-objet-id="refrigerator" data-setting-btn="refrigeratorSetBtn">Add to Cart</button> </div> </div></div>';
 						collectionHtml += '</div>';
 					}
 					if (ID === "refrigerator_convertible") {
@@ -2360,25 +2357,21 @@ var userSelectedModelData = [];
 						}
 						if (targetID === 'refrigerator_convertible_L') {
 							collectionHtml += '<div class="collection_wrap">';
-							collectionHtml += '<p class="only_pc">Customise your material and colours</p> <p class="only_mobile">Customise </br> your material and colours</p>';
-							collectionHtml += "<div class='main_color_wrap'>";
+							collectionHtml += "<div class='main_color_wrap'> <p class='main_tooltip'>Coming Soon</p>";
 							collectionHtml += '<div class="img_wrap"> <img src="https://www.lg.com/au/images/objet/simulator/appliances/rf_con/ico/Fridge_img.png" alt=""/></div>';
 							collectionHtml += '<div class="txt_wrap"> <span>LG Fridge Objet® Collection</span> <p>386L Single Door Bar Fridge </br>Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
-							collectionHtml += '<div class="btn_wrap learn_btn"> <a href="https://www.lg.com/au/objet-collection/lg-mp-l386">Learn more</a></div> </div></div>';
+							collectionHtml += '<div class="btn_wrap"> <a href="https://www.lg.com/au/objet-collection/lg-mp-l386">Learn more</a></div> </div></div>';
 							collectionHtml += '</div>';
 						}
 						if (targetID === 'refrigerator_convertible_M') {
 							collectionHtml += '<div class="collection_wrap">';
-							collectionHtml += '<p class="only_pc">Customise your material and colours</p> <p class="only_mobile">Customise </br> your material and colours</p>';
-							collectionHtml += "<div class='main_color_wrap'>";
+							collectionHtml += "<div class='main_color_wrap'> <p class='main_tooltip'>Coming Soon</p>";
 							collectionHtml += '<div class="img_wrap"> <img src="https://www.lg.com/au/images/objet/simulator/appliances/rf_con/ico/Freezer_img.png" alt=""/></div>';
 							collectionHtml += '<div class="txt_wrap"> <span>LG Freezer Objet® Collection</span> <p>324L Upright Bar Freezer </br> Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
-							collectionHtml += '<div class="btn_wrap learn_btn"> <a href="https://www.lg.com/au/freezers/lg-mp-f324">Learn more</a></div> </div></div>';
+							collectionHtml += '<div class="btn_wrap"> <a href="https://www.lg.com/au/freezers/lg-mp-f324">Learn more</a></div> </div></div>';
 							collectionHtml += '</div>';
 						}
 					}
-					/* 220621 end */
-
 					//@2022-05-18 본품컬러 일괄선택 추가 (e)
 
 					$(".select_objet_list .type01 > p").length < 1 && $(".select_objet_list > .type01").prepend('<p></p>')
@@ -2488,20 +2481,17 @@ var userSelectedModelData = [];
 
 				if (ID === "refrigerator" || ID === "refrigerator_convertible") {
 					if (ID === "refrigerator") {
-						/* 220621 start */
-						if (targetID === "refrigerator_LT") activeObjetSelector = '<i>Top Left</i> Panel';
-						if (targetID === "refrigerator_LB") activeObjetSelector = '<i>Bottom Left</i> Panel';
-						if (targetID === "refrigerator_RB") activeObjetSelector = '<i>Bottom Right</i> Panel';
+						if (targetID === "refrigerator_LT") activeObjetSelector = '<i>Top</i> Left Panel';
+						if (targetID === "refrigerator_LB") activeObjetSelector = '<i>Bottom</i> Left Panel';
+						if (targetID === "refrigerator_RB") activeObjetSelector = '<i>Bottom</i> Right Panel';
 
 						for (var i = 0; i < configData.object.length; i++) {
 							if (configData.object[i].id === "refrigerator") {
 								panel_price = configData.object[i].price.panel;
 							}
 						}
-						outputTitleHtml += "<span> " + activeObjetSelector + "</span>";
 						outputTitleHtml += "<strong>Customise your material and colours</strong>";
-						/* 220621 end */
-
+						outputTitleHtml += "<span> " + activeObjetSelector + "</span>";
 						// outputTitleHtml += "<em><span>Cost for color change</span> (Panel + Service cost)<br>";
 						// outputTitleHtml += panel_price;
 						// moTitle += outputTitleHtml // 모바일 title 추가
@@ -2516,10 +2506,8 @@ var userSelectedModelData = [];
 								panel_price = configData.object[i].price.panel;
 							}
 						}
-						/* 220621 start */
-						outputTitleHtml += "<span> " + activeObjetSelector + "</span>";
 						outputTitleHtml += "<strong>Customise your material and colours</strong>";
-						/* 220621 end */
+						outputTitleHtml += "<span> " + activeObjetSelector + "</span>";
 						// moTitle += outputTitleHtml // 모바일 title 추가
 					}
 					// $(".select_objet > div").length < 1 && $(".select_objet").prepend('<div></div>'); // 모바일 타이틀 영역 추가
