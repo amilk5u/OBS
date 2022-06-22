@@ -382,9 +382,7 @@ margin: 0; }
 
 .share .btn-share { padding-left: 32px; opacity: 0.9; font-size: 12px; font-weight: 500; line-height: 24px; letter-spacing: -0.06px; color: #fefefe; background: url("https://www.lg.com/cn/images/objet/ico/ico-share.png") no-repeat left center; } 
 .img-download .btn-dw { width: 100%; height: 56px; box-shadow: 0 2px 8px 0 #00000014; -moz-box-shadow: 0 2px 8px 0 #00000014; -webkit-box-shadow: 0 2px 8px 0 #00000014; background-color: #101010; } 
-/* 220622 start */
-/* .img-download .btn-dw span { display: inline-block; padding-left: 40px; line-height: 24px; font-size: 14px; color: #fefefe; background: url("https://www.lg.com/cn/images/objet/ico/ico-check.png") no-repeat left center; }  */
-/* 220622 end */
+.img-download .btn-dw span { display: inline-block; padding-left: 40px; line-height: 24px; font-size: 14px; color: #fefefe; background: url("https://www.lg.com/cn/images/objet/ico/ico-check.png") no-repeat left center; } 
 
 .swiper-slide { display: block; } 
 
