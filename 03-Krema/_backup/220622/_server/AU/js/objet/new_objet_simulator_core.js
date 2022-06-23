@@ -108,7 +108,6 @@ var userSelectedModelData = [];
 						defaultImage: 'appliances/rf/rf_door01_nomal.png', //첫 오브제 기기 init 시 보여줄 selection 이미지
 						productInfo: { modelId: 'MD07545595', modelCode: 'MF-B664.AGERGAP' }, //장바구니 API - 제품모델명 추가 (Surface 컬러별 판넬 모델명 추가)
 						Surface: [
-							
 							{ colorCode: 'fn_botanic', filename: 'appliances/rf/rf_door01_01fn_botanic.png' },
 							{ colorCode: 'fn_sand', filename: 'appliances/rf/rf_door01_01fn_sand.png' },
 							{ colorCode: 'fn_stone', filename: 'appliances/rf/rf_door01_01fn_stone.png' },
@@ -1695,19 +1694,6 @@ var userSelectedModelData = [];
 				_self.selectObject('refrigerator', 'refrigerator_LT');
 				/* 220603 end 4도어 활성화 */
 
-				/* 220622 버튼 위치 재정의 start */
-				var current_page_with = $(window).width();
-				var img_width = $(".objet_select_slider .swiper-slide-active img").innerWidth();
-				var btn_download_pos = current_page_with - img_width;
-
-				// console.log("사이즈 체크", current_page_with,img_width);
-				if (current_page_with > img_width) {
-					$(".img-download").css({ "right": btn_download_pos - 10 });
-				} else {
-					$(".img-download").css({ "right": 0 });
-				}
-				/* 220622 버튼 위치 재정의 end */
-
 				//@2022-05-18 simulator load 시, 본품컬러 default 세팅 (s)
 				// refrigerator
 				/* $("#refrigerator_LT").val("st_green");
@@ -1723,7 +1709,7 @@ var userSelectedModelData = [];
 				$("#refrigerator_convertible_M").val("st_silver"); */
 				//@2022-05-18 simulator load 시, 본품컬러 default 세팅 (e)
 
-
+				
 				//오브젝트 세팅 후 클릭 이벤트 바인딩
 				var tmpObject = document.querySelectorAll('.object-app');
 
@@ -1815,19 +1801,6 @@ var userSelectedModelData = [];
 
 				_self.updateObjectPosition(); //오브젝트 init 후 위치값 rearrange
 				window.addEventListener('resize', function () {
-					/* 220622 버튼 위치 재정의 start */
-					var current_page_with = $(window).width();
-					var img_width = $(".objet_select_slider .swiper-slide-active img").innerWidth();
-					var btn_download_pos = current_page_with - img_width;
-
-					// console.log("사이즈 체크", current_page_with,img_width);
-					if (current_page_with > img_width) {
-						$(".img-download").css({ "right": btn_download_pos - 10 });
-					} else {
-						$(".img-download").css({ "right": 0 });
-					}
-					/* 220622 버튼 위치 재정의 end */
-
 					_self.updateObjectPosition();
 				});
 
@@ -2615,10 +2588,6 @@ var userSelectedModelData = [];
 						objects[i].classList.remove('select');
 					}
 				}
-
-				$("#refrigerator_LT").val(null);
-				$("#refrigerator_LB").val(null);
-				$("#refrigerator_RB").val(null);
 				// 팝업 숨김
 				$(".color_warning_popup").closest(".layer_popup").fadeOut();
 			});
@@ -2627,27 +2596,18 @@ var userSelectedModelData = [];
 
 			//@2022-05-18 본품컬러 일괄선택 기능추가 (s)
 			// 본품 컬러 선택하기 버튼
-			$("body").on("click", ".btn_try", function () {
-				let mainColorSetID = $(this).attr('data-setting-btn');
+			$(".mainColorSet").on("click", function () {
+				let mainColorSetID = $(this).attr('id');
 				mainColorFun(mainColorSetID);
 			});
 
 			function mainColorFun(btnID) {
-				var tmpObject = document.querySelectorAll('.btn-objet');
 				let selectColor;
 				if (btnID === 'refrigeratorSetBtn') {
 					// 장바구니 데이터 삭제
 					for (var i = 0; i < userSelectedModelData.length; i++) {
 						if (userSelectedModelData[i].selectedObject_id == "refrigerator") userSelectedModelData.splice(i, 1);
 					}
-
-					// select 클래스 추가
-					for (var i = 0; i < objects.length; i++) {
-						if (objects[i].getAttribute('data-object') === 'refrigerator') {
-							objects[i].classList.add('select');
-						}
-					}
-
 					// Mist Glass 선택 후 본품컬러(Solid Metal) 선택시 기능막혀있는 부분 예외처리
 					simulator.resetSelectedObject('refrigerator');
 					// simulator.resetSelectedObject('refrigerator','refrigerator_LT');
@@ -2661,14 +2621,6 @@ var userSelectedModelData = [];
 					simulator.setObject('refrigerator', 'refrigerator_LB', 'st_silver');
 					simulator.setObject('refrigerator', 'refrigerator_RB', 'st_silver');
 
-					// colorcode 추가
-					for (var i = 0; i < tmpObject.length; i++) {
-						if (tmpObject[i].classList.contains('active')) {
-							colorPanelHistory.prevSelectColorCode = tmpObject[i].getAttribute('data-color-code');
-						}
-					}
-
-
 					/* 220524 start Select 를 눌렀을때 선택유도 표시 삭제 */
 					// $('a[data-object="refrigerator"]').removeClass("object-anchor");
 					/* 220524 end Select 를 눌렀을때 선택유도 표시 삭제 */
@@ -2681,7 +2633,6 @@ var userSelectedModelData = [];
 					simulator.setObject('refrigerator_convertible', 'refrigerator_convertible_M', 'st_silver');
 					$("#refrigerator_convertible_M").val("st_silver");
 				}
-
 				// 현재 선택된 컬러 값
 				for (let i = 0; i < objects.length; i++) {
 					if (objects[i].classList.contains('active')) {
@@ -2845,9 +2796,6 @@ var userSelectedModelData = [];
 
 			if (!stageSetting.simulatorSidebar.classList.contains('active')) {
 				stageSetting.simulatorSidebar.classList.add('active');
-				/* 220622 모바일 다운로드 버튼 수정 start */
-				$(".img-download").addClass("active");
-				/* 220622 모바일 다운로드 버튼 수정 end */
 				for (var i = 0; i < subIndexList.length; i++) {
 					if (i == selectedIndex) {
 						if (!subIndexList[i].classList.contains('active'))
@@ -2861,12 +2809,6 @@ var userSelectedModelData = [];
 		},
 		hideRightSideOptions: function () {
 			document.querySelector('.select_objet').classList.remove('active');
-
-			/* 220622 모바일 다운로드 버튼 수정 start */
-			if ($(".img-download").hasClass("active")) {
-				$(".img-download").removeClass("active");
-			}
-			/* 220622 모바일 다운로드 버튼 수정 end */
 
 			if (stageSetting.simulatorSidebar.classList.contains('active')) {
 				stageSetting.simulatorSidebar.classList.remove('active');

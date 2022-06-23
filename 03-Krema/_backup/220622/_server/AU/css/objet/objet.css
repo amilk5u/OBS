@@ -227,7 +227,7 @@
 /*#innerSimulator .simulator.full .objet_select_slider .img-download .btn-dw { width: 40px; height: 40px; margin-left: 12px; border-radius: 50%; overflow: hidden; background: url('https://www.lg.com/au/images/objet/ico/ico_simul_cart.png') #ffffff center center no-repeat; background-size: 100% 100%;; animation:lightBorder3 5s infinite; }*/
 #innerSimulator .simulator.full .objet_select_slider .img-download .btn-dw { height: auto; position: relative; padding:10px 25px 10px 55px; background-color: #C00000; border-radius: 100px; }
 #innerSimulator .simulator.full .objet_select_slider .img-download .btn-dw:before { width: 25px; height: 25px; content: ""; display: inline-block; background: url(./../../images/objet/icon-cart-desktop.png) 50% 50% no-repeat; position: absolute; left: 18px; top: 10px; background-size: cover; }
-#innerSimulator .simulator.full .objet_select_slider .img-download .btn-dw span { font-size: 15px; color:#fff; }
+#innerSimulator .simulator.full .objet_select_slider .img-download .btn-dw span { font-size: 15px; }
 /* 220621 버튼 디자인 변경 end */
 #innerSimulator .simulator.full .objet_select_slider .simul-info { display: block; position: absolute; z-index: 999; top: 90px; /* BTOCSITE-105 오브제컬렉션 브랜드관 체험 수정*/left: 28px; width: 186px; height: 74px; padding: 22px 16px 16px; font-size: 12px; color: #101010; opacity: 0.8; filter: opacity(80); background: url("https://www.lg.com/au/images/objet/bg-combined-shape.png") no-repeat } 
 #innerSimulator .simulator.full .objet_select_slider .rf-con { width: 252px; height: 91px; left: 10px; font-size: 12px; line-height: 1.5; letter-spacing: -0.06px; display: none; background: url(https://www.lg.com/au/images/objet/bg-combined-shape_rf-con.png) no-repeat; background-size: contain } 
@@ -267,10 +267,9 @@
 #innerSimulator .simulator.full .objet_select_slider .img-download .tooltip-wrap.share [data-fixed=fixed-right]+.tooltip-box .box_inner { position:relative; width:auto; border-radius:10px; z-index:5; }
 
 /* 220621 버튼 디자인 변경 start */
-#innerSimulator .simulator.full .objet_select_slider .img-download { bottom:220px;/*bottom:100px;*/ top: auto; transition: none; padding: 0; right: 0; /*transition: bottom .5s;*/ }
-#innerSimulator .simulator.full .objet_select_slider .img-download.active { bottom:225px; }
-#innerSimulator .simulator.full .objet_select_slider .img-download .btn-dw { width: 50px; height: 40px; padding: 0; border-radius: 100px 0 0 100px; }
-#innerSimulator .simulator.full .objet_select_slider .img-download .btn-dw:before { width: 22px; height: 21px; background: url(./../../images/objet/icon-cart-mobile.png) 50% 50% no-repeat; background-size: cover; left: 17px; top: 9px; }
+#innerSimulator .simulator.full .objet_select_slider .img-download { bottom:230px; top: auto; transition: none; padding: 0; right: 0; }
+#innerSimulator .simulator.full .objet_select_slider .img-download .btn-dw { width: 65px; height: 50px; padding: 0; border-radius: 100px 0 0 100px; }
+#innerSimulator .simulator.full .objet_select_slider .img-download .btn-dw:before { width: 28px; height: 27px; background: url(./../../images/objet/icon-cart-mobile.png) 50% 50% no-repeat; background-size: cover; left: 21px; top: 11px; }
 #innerSimulator .simulator.full .objet_select_slider .img-download .btn-dw span { display: none; }
 /* 220621 버튼 디자인 변경 end */
 
@@ -658,17 +657,14 @@
 .select_objet:after { background:transparent; }
 
 /* 220603 start */
+
 /* 220621 start */
 .select_objet_list .objet-bx {overflow:visible !important;}
 .select_objet.active > div { display: none; }
 .select_objet_list .type01 .h3Tile { font-size:22px; font-weight:700; color:#181818; padding:0 20px; }
 .select_objet_list .type01 .h3Tile > span { display:block; color:#060606; font-size: 17px; font-weight:700; }
 .select_objet_list .type01 .h3Tile > span i { color: #a50034; font-style: normal; }
-<<<<<<< HEAD
-.select_objet_list .type01 .h3Tile > strong { font-size: 15px; color: #919191; /*line-height: 30px;*/ display: block; font-weight: 600; padding:2px 0 0; }
-=======
 .select_objet_list .type01 .h3Tile > strong { font-size: 17px; color: #919191; line-height: 30px; display: block; font-weight: 600; }
->>>>>>> 0fc252e7d6c61bf0a01558e335a5387692463b37
 .select_objet .main_tooltip { padding: 0 0 5px; font-size: 19px; font-weight: 600; color: #2e2e2e; text-align: center; }
 .select_objet .collection_wrap { padding:0 0 30px; }
 .select_objet .collection_wrap > p { padding: 0 0 9px; text-align:center; font-size: 19px; font-weight: 700; line-height: 35px; }
@@ -684,7 +680,6 @@
 .select_objet .collection_wrap .main_color_wrap .icon_comingSoon .coming_label:after { right: 0; border-bottom: 10px solid #000; border-top: 10px solid #000; border-right: 11px solid transparent; display:none }
 .select_objet .collection_wrap .main_color_wrap .icon_comingSoon .coming_label:before { width:87%; height:100%; background-color: #000; left:0; z-index: -1; }
 .select_objet .collection_wrap .main_color_wrap .txt_wrap { width:calc(100% - 110px); float:left; padding:0 0 0 10px; box-sizing: border-box; position:relative; }
-.select_objet .collection_wrap .main_color_wrap .txt_wrap span.prd_title { line-height: 18px; display: block; }
 .select_objet .collection_wrap .main_color_wrap .txt_wrap span { color:#2e2e2e; font-size: 15px; font-weight: 700; }
 .select_objet .collection_wrap .main_color_wrap .txt_wrap p { color:#686868; font-size: 13px; font-weight: 600; line-height: 15px; }
 .select_objet .collection_wrap .main_color_wrap .txt_wrap span.price_num { padding:3px 0 0; color:#767676; font-size: 16px; font-weight: 700; display: block; }
@@ -769,11 +764,7 @@
 .select_objet .color_select_wrap { display:inline-block; vertical-align:top; position:relative; padding:45px 0 0; margin:0 0 0 20px; }
 .select_objet .color_select_wrap .h3Tile { position:absolute; top:0; left:0; padding:0; }
 .select_objet_list .type01 .h3Tile > span { font-size:15px; }
-<<<<<<< HEAD
-.select_objet_list .type01 .h3Tile > strong { font-size:13px; /*line-height:20px;*/ }
-=======
 .select_objet_list .type01 .h3Tile > strong { font-size:14px; line-height:20px; }
->>>>>>> 0fc252e7d6c61bf0a01558e335a5387692463b37
 
 /*.bg_type_sel.type02 .objet-bx > ul { padding:25px 20px 0 20px; }
 .bg_type_sel.type02 .objet-bx > ul > li button { width:70px; padding-top:70px; } 
