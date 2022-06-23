@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.select_objet + .objet_select_slider .img-download.typ2{transition: bottom 0.5s ease-in-out;}
+.select_objet.active ~ .objet_select_slider .img-download.typ2{bottom:145px;transform:translateY(0);}
+
+.statr-bx label{display:inline-block;margin-top:5px;margin-bottom:-15px;}
+.statr-bx label span{font-size:13px;}
+.btn-url-res.btn-pop-reserve{display:block;margin:20px auto;}
+.select_objet.active ~ .objet_select_slider .img-download{left:63%;width:35%;}
+.select_objet.active ~ .objet_select_slider .img-download .btn-dw{height:32px;}
+.select_objet.active ~ .objet_select_slider .img-download .btn-dw span{padding-left:0;background:none;}
+
+
