@@ -1694,19 +1694,6 @@ var userSelectedModelData = [];
 				_self.selectObject('refrigerator', 'refrigerator_LT');
 				/* 220603 end 4도어 활성화 */
 
-				/* 220622 버튼 위치 재정의 start */
-				var current_page_with = $(window).width();
-				var img_width = $(".objet_select_slider .swiper-slide-active img").innerWidth();
-				var btn_download_pos = current_page_with - img_width;
-
-				// console.log("사이즈 체크", current_page_with,img_width);
-				if (current_page_with > img_width) {
-					$(".img-download").css({ "right": btn_download_pos - 10 });
-				} else {
-					$(".img-download").css({ "right": 0 });
-				}
-				/* 220622 버튼 위치 재정의 end */
-
 				//@2022-05-18 simulator load 시, 본품컬러 default 세팅 (s)
 				// refrigerator
 				/* $("#refrigerator_LT").val("st_green");
@@ -1814,19 +1801,6 @@ var userSelectedModelData = [];
 
 				_self.updateObjectPosition(); //오브젝트 init 후 위치값 rearrange
 				window.addEventListener('resize', function () {
-					/* 220622 버튼 위치 재정의 start */
-					var current_page_with = $(window).width();
-					var img_width = $(".objet_select_slider .swiper-slide-active img").innerWidth();
-					var btn_download_pos = current_page_with - img_width;
-
-					// console.log("사이즈 체크", current_page_with,img_width);
-					if (current_page_with > img_width) {
-						$(".img-download").css({ "right": btn_download_pos - 10 });
-					} else {
-						$(".img-download").css({ "right": 0 });
-					}
-					/* 220622 버튼 위치 재정의 end */
-
 					_self.updateObjectPosition();
 				});
 
@@ -2354,14 +2328,12 @@ var userSelectedModelData = [];
 
 				if (window.Scrollbar.has(targetSideBarArea)) {
 
-
-
 					window.Scrollbar.get(targetSideBarArea).destroy();
 
 					//@2022-05-18 본품컬러 일괄선택 추가 (s)
 					var model_price;
 
-					/* 20220622 start */
+					/* 220624 start */
 					var outputTitleHtml = "", activeObjetSelector = "";
 					if (ID === "refrigerator" || ID === "refrigerator_convertible") {
 						if (ID === "refrigerator") {
@@ -2380,6 +2352,7 @@ var userSelectedModelData = [];
 					} else {
 						outputTitleHtml += "Materials and colors";
 					}
+					/* 220624 end */
 
 					if (ID === "refrigerator") {
 						for (var i = 0; i < configData.object.length; i++) {
@@ -2387,16 +2360,11 @@ var userSelectedModelData = [];
 								model_price = configData.object[i].price.product;
 							}
 						}
-
 						collectionHtml += '<div class="collection_wrap">';
-						collectionHtml += '<p class="only_pc">Customise your material and colours</p> <p class="only_mobile">Customise </br> your material and colours</p>';
-						collectionHtml += "<div class='main_color_wrap'>";
-						// collectionHtml += "<p class='main_tooltip'>LG's recommended colour</p>";
+						collectionHtml += "<div class='main_color_wrap'> <p class='main_tooltip'>LG's recommended colour</p>";
 						collectionHtml += '<div class="img_wrap"> <img src="https://www.lg.com/au/images/objet/simulator/appliances/rf/ico/refrigerator_img.png" alt=""/></div>';
-						collectionHtml += '<div class="txt_wrap"> <span class="prd_title">LG InstaView Objet Collection®</span> <p>617L French Door Fridge </br>Green & Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
-						// collectionHtml += '<div class="btn_wrap"> <div class="small_panel"><img src="https://www.lg.com/au/images/objet/simulator/color_02st_green.png"/><img src="https://www.lg.com/au/images/objet/simulator/color_02st_silver.png"/><img src="https://www.lg.com/au/images/objet/simulator/color_02st_silver.png"/> </div> <button type="button" class="btn_modelRestBtn" data-objet-id="refrigerator" data-setting-btn="refrigeratorSetBtn"><span>Try it</span></button> </div> </div></div>';
-						collectionHtml += '<div class="btn_wrap"> <div class="small_panel"><img src="https://www.lg.com/au/images/objet/simulator/color_02st_green.png"/><img src="https://www.lg.com/au/images/objet/simulator/color_02st_silver.png"/><img src="https://www.lg.com/au/images/objet/simulator/color_02st_silver.png"/> </div> <button type="button" class="btn_try" data-objet-id="refrigerator" data-setting-btn="refrigeratorSetBtn"><span>Try it</span></button> </div> </div></div>';
-						// collectionHtml += '<div class="btn_wrap"> <button type="button" class="btn_modelRestBtn" data-objet-id="refrigerator" data-setting-btn="refrigeratorSetBtn">Add to Cart</button> </div> </div></div>';
+						collectionHtml += '<div class="txt_wrap"> <span>LG InstaView Objet Collection® Collection</span> <p>617L French Door Fridge </br>Green & Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
+						collectionHtml += '<div class="btn_wrap"> <button type="button" class="btn_modelRestBtn" data-objet-id="refrigerator" data-setting-btn="refrigeratorSetBtn">Add to Cart</button> </div> </div></div>';
 						collectionHtml += '</div>';
 					}
 					if (ID === "refrigerator_convertible") {
@@ -2407,34 +2375,30 @@ var userSelectedModelData = [];
 						}
 						if (targetID === 'refrigerator_convertible_L') {
 							collectionHtml += '<div class="collection_wrap">';
-							collectionHtml += '<p class="only_pc">Customise your material and colours</p> <p class="only_mobile">Customise </br> your material and colours</p>';
-							collectionHtml += "<div class='main_color_wrap'>";
-							// collectionHtml += "<p class='main_tooltip'>Coming Soon</p>";
-							collectionHtml += '<div class="img_wrap icon_comingSoon"> <span class="coming_label">Coming Soon</span><img src="https://www.lg.com/au/images/objet/simulator/appliances/rf_con/ico/Fridge_img.png" alt=""/></div>';
-							collectionHtml += '<div class="txt_wrap"> <span class="prd_title">LG Objet Collection® Single Door Fridge</span> <p>386L Single Door Fridge w Interchangeable Panels in Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
-							collectionHtml += '<div class="btn_wrap learn_btn"> <a href="https://www.lg.com/au/objet-collection/lg-mp-l386">Learn more</a></div> </div></div>';
+							collectionHtml += "<div class='main_color_wrap'> <p class='main_tooltip'>Coming Soon</p>";
+							collectionHtml += '<div class="img_wrap"> <img src="https://www.lg.com/au/images/objet/simulator/appliances/rf_con/ico/Fridge_img.png" alt=""/></div>';
+							collectionHtml += '<div class="txt_wrap"> <span>LG Objet Collection® Collection Single Door Fridge</span> <p>386L Single Door Fridge w Interchangeable Panels in Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
+							collectionHtml += '<div class="btn_wrap"> <a href="https://www.lg.com/au/objet-collection/lg-mp-l386">Learn more</a></div> </div></div>';
 							collectionHtml += '</div>';
 						}
 						if (targetID === 'refrigerator_convertible_M') {
 							collectionHtml += '<div class="collection_wrap">';
-							collectionHtml += '<p class="only_pc">Customise your material and colours</p> <p class="only_mobile">Customise </br> your material and colours</p>';
-							collectionHtml += "<div class='main_color_wrap'>";
-							// collectionHtml += "<p class='main_tooltip'>Coming Soon</p>";
-							collectionHtml += '<div class="img_wrap icon_comingSoon"> <span class="coming_label">Coming Soon</span><img src="https://www.lg.com/au/images/objet/simulator/appliances/rf_con/ico/Freezer_img.png" alt=""/></div>';
-							collectionHtml += '<div class="txt_wrap"> <span class="prd_title">LG Objet Collection® Upright Freezer</span> <p>324L Upright Freezer w Interchangeable Panels in Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
-							collectionHtml += '<div class="btn_wrap learn_btn"> <a href="https://www.lg.com/au/freezers/lg-mp-f324">Learn more</a></div> </div></div>';
+							collectionHtml += "<div class='main_color_wrap'> <p class='main_tooltip'>Coming Soon</p>";
+							collectionHtml += '<div class="img_wrap"> <img src="https://www.lg.com/au/images/objet/simulator/appliances/rf_con/ico/Freezer_img.png" alt=""/></div>';
+							collectionHtml += '<div class="txt_wrap"> <span>LG Objet Collection® Collection Upright Freezer</span> <p>324L Upright Freezer w Interchangeable Panels in Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
+							collectionHtml += '<div class="btn_wrap"> <a href="https://www.lg.com/au/freezers/lg-mp-f324">Learn more</a></div> </div></div>';
 							collectionHtml += '</div>';
 						}
 					}
 					//@2022-05-18 본품컬러 일괄선택 추가 (e)
 
-					// $(".select_objet_list .type01 > p").length < 1 && $(".select_objet_list > .type01").prepend('<p></p>')
-					// document.querySelector('.select_objet_list .type01 > p').innerHTML = collectionHtml
-					// targetSideBarArea.innerHTML = outputHtml;
+					/* 220624 start */
+					/* $(".select_objet_list .type01 > p").length < 1 && $(".select_objet_list > .type01").prepend('<p></p>')
+					document.querySelector('.select_objet_list .type01 > p').innerHTML = collectionHtml
+					targetSideBarArea.innerHTML = outputHtml; */
 					outputHtml = "<div class='color_select_wrap'><h3 class='h3Tile' data-simulator-sidebar-title=''>" + outputTitleHtml + "</h3>" + outputHtml + "</div>"
 					targetSideBarArea.innerHTML = collectionHtml + outputHtml;
-
-					/* 20220622 end */
+					/* 220624 end */
 
 					var scrollbar = window.Scrollbar.init(targetSideBarArea);
 					//console.log(targetSideBarArea);
@@ -2470,7 +2434,7 @@ var userSelectedModelData = [];
 					//@2022-05-18 본품컬러 일괄선택 추가 (s)
 					var model_price;
 
-					/* 220621 start */
+					/* 220624 start */
 					var outputTitleHtml = "", activeObjetSelector = "";
 					if (ID === "refrigerator" || ID === "refrigerator_convertible") {
 						if (ID === "refrigerator") {
@@ -2489,6 +2453,7 @@ var userSelectedModelData = [];
 					} else {
 						outputTitleHtml += "Materials and colors";
 					}
+					/* 220624 end */
 
 					if (ID === "refrigerator") {
 						for (var i = 0; i < configData.object.length; i++) {
@@ -2497,14 +2462,10 @@ var userSelectedModelData = [];
 							}
 						}
 						collectionHtml += '<div class="collection_wrap">';
-						collectionHtml += '<p class="only_pc">Customise your material and colours</p> <p class="only_mobile">Customise </br> your material and colours</p>';
-						collectionHtml += "<div class='main_color_wrap'>";
-						// collectionHtml += "<p class='main_tooltip'>LG's recommended colour</p>";
+						collectionHtml += "<div class='main_color_wrap'> <p class='main_tooltip'>LG's recommended colour</p>";
 						collectionHtml += '<div class="img_wrap"> <img src="https://www.lg.com/au/images/objet/simulator/appliances/rf/ico/refrigerator_img.png" alt=""/></div>';
-						collectionHtml += '<div class="txt_wrap"> <span class="prd_title">LG InstaView Objet Collection®</span> <p>617L French Door Fridge </br>Green & Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
-						// collectionHtml += '<div class="btn_wrap"> <div class="small_panel"><img src="https://www.lg.com/au/images/objet/simulator/color_02st_green.png"/><img src="https://www.lg.com/au/images/objet/simulator/color_02st_silver.png"/><img src="https://www.lg.com/au/images/objet/simulator/color_02st_silver.png"/> </div> <button type="button" class="btn_modelRestBtn" data-objet-id="refrigerator" data-setting-btn="refrigeratorSetBtn"><span>Try it</span></button> </div> </div></div>';
-						collectionHtml += '<div class="btn_wrap"> <div class="small_panel"><img src="https://www.lg.com/au/images/objet/simulator/color_02st_green.png"/><img src="https://www.lg.com/au/images/objet/simulator/color_02st_silver.png"/><img src="https://www.lg.com/au/images/objet/simulator/color_02st_silver.png"/> </div> <button type="button" class="btn_try" data-objet-id="refrigerator" data-setting-btn="refrigeratorSetBtn"><span>Try it</span></button> </div> </div></div>';
-						// collectionHtml += '<div class="btn_wrap"> <button type="button" class="btn_modelRestBtn" data-objet-id="refrigerator" data-setting-btn="refrigeratorSetBtn">Add to Cart</button> </div> </div></div>';
+						collectionHtml += '<div class="txt_wrap"> <span>LG InstaView Objet Collection® Collection</span> <p>617L French Door Fridge </br>Green & Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
+						collectionHtml += '<div class="btn_wrap"> <button type="button" class="btn_modelRestBtn" data-objet-id="refrigerator" data-setting-btn="refrigeratorSetBtn">Add to Cart</button> </div> </div></div>';
 						collectionHtml += '</div>';
 					}
 					if (ID === "refrigerator_convertible") {
@@ -2515,38 +2476,98 @@ var userSelectedModelData = [];
 						}
 						if (targetID === 'refrigerator_convertible_L') {
 							collectionHtml += '<div class="collection_wrap">';
-							collectionHtml += '<p class="only_pc">Customise your material and colours</p> <p class="only_mobile">Customise </br> your material and colours</p>';
-							collectionHtml += "<div class='main_color_wrap'>";
-							// collectionHtml += "<p class='main_tooltip'>Coming Soon</p>";
-							collectionHtml += '<div class="img_wrap icon_comingSoon"> <span class="coming_label">Coming Soon</span><img src="https://www.lg.com/au/images/objet/simulator/appliances/rf_con/ico/Fridge_img.png" alt=""/></div>';
-							collectionHtml += '<div class="txt_wrap"> <span class="prd_title">LG Objet Collection® Single Door Fridge</span> <p>386L Single Door Fridge w Interchangeable Panels in Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
-							collectionHtml += '<div class="btn_wrap learn_btn"> <a href="https://www.lg.com/au/objet-collection/lg-mp-l386">Learn more</a></div> </div></div>';
+							collectionHtml += "<div class='main_color_wrap'> <p class='main_tooltip'>Coming Soon</p>";
+							collectionHtml += '<div class="img_wrap"> <img src="https://www.lg.com/au/images/objet/simulator/appliances/rf_con/ico/Fridge_img.png" alt=""/></div>';
+							collectionHtml += '<div class="txt_wrap"> <span>LG Objet Collection® Collection Single Door Fridge</span> <p>386L Single Door Fridge w Interchangeable Panels in Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
+							collectionHtml += '<div class="btn_wrap"> <a href="https://www.lg.com/au/objet-collection/lg-mp-l386">Learn more</a></div> </div></div>';
 							collectionHtml += '</div>';
 						}
 						if (targetID === 'refrigerator_convertible_M') {
 							collectionHtml += '<div class="collection_wrap">';
-							collectionHtml += '<p class="only_pc">Customise your material and colours</p> <p class="only_mobile">Customise </br> your material and colours</p>';
-							collectionHtml += "<div class='main_color_wrap'>";
-							// collectionHtml += "<p class='main_tooltip'>Coming Soon</p>";
-							collectionHtml += '<div class="img_wrap icon_comingSoon"> <span class="coming_label">Coming Soon</span><img src="https://www.lg.com/au/images/objet/simulator/appliances/rf_con/ico/Freezer_img.png" alt=""/></div>';
-							collectionHtml += '<div class="txt_wrap"> <span class="prd_title">LG Objet Collection® Upright Freezer</span> <p>324L Upright Freezer w Interchangeable Panels in Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
-							collectionHtml += '<div class="btn_wrap learn_btn"> <a href="https://www.lg.com/au/freezers/lg-mp-f324">Learn more</a></div> </div></div>';
+							collectionHtml += "<div class='main_color_wrap'> <p class='main_tooltip'>Coming Soon</p>";
+							collectionHtml += '<div class="img_wrap"> <img src="https://www.lg.com/au/images/objet/simulator/appliances/rf_con/ico/Freezer_img.png" alt=""/></div>';
+							collectionHtml += '<div class="txt_wrap"> <span>LG Objet Collection® Collection Upright Freezer</span> <p>324L Upright Freezer w Interchangeable Panels in Silver Stainless Steel</p> <span class="price_num">' + model_price + '</span>';
+							collectionHtml += '<div class="btn_wrap"> <a href="https://www.lg.com/au/freezers/lg-mp-f324">Learn more</a></div> </div></div>';
 							collectionHtml += '</div>';
 						}
 					}
 					//@2022-05-18 본품컬러 일괄선택 추가 (e)
 
-					// $(".select_objet_list .type01 > p").length < 1 && $(".select_objet_list > .type01").prepend('<p></p>')
-					// document.querySelector('.select_objet_list .type01 > p').innerHTML = collectionHtml
-					// targetSideBarArea.innerHTML = outputHtml;
+					/* 220624 start */
+					/* $(".select_objet_list .type01 > p").length < 1 && $(".select_objet_list > .type01").prepend('<p></p>')
+					document.querySelector('.select_objet_list .type01 > p').innerHTML = collectionHtml
+					targetSideBarArea.innerHTML = outputHtml; */
 					outputHtml = "<div class='color_select_wrap'><h3 class='h3Tile' data-simulator-sidebar-title=''>" + outputTitleHtml + "</h3>" + outputHtml + "</div>"
 					targetSideBarArea.innerHTML = collectionHtml + outputHtml;
-					/* 220621 end */
+					/* 220624 end */
 
 					window.Scrollbar.init(targetSideBarArea);
 				}
 
+				/* 220616 start 이전컬러세팅 */
+				// 다른 제품 클릭 후 선택 후 refrigerator 클릭 시 
+				var tmpObject = document.querySelectorAll('.object-app');
+				var tmpObjectBtn = document.querySelectorAll('.btn-objet');
+				if (ID === "refrigerator") {
+					for (let i = 0; i < tmpObjectBtn.length; i++) {
+						if (tmpObjectBtn[i].classList.contains('active')) {
+							colorPanelHistory.prevSelectColorCode = tmpObjectBtn[i].getAttribute('data-color-code');
+						}
+					}
+					console.log("prevSelectColorCode", colorPanelHistory.prevSelectColorCode)
+				}
+				/* 220616 end 이전컬러세팅 */
 
+
+				//@2022-05-18 선택값에 따라 select_objet 타이틀 변경 (s)
+				var objectColorPopupTitle = document.querySelector('[data-simulator-sidebar-title]'),
+					activeObjetSelector = "";
+				var outputTitleHtml = "";
+				var panel_price;
+				// var moTitle = "";
+
+				if (ID === "refrigerator" || ID === "refrigerator_convertible") {
+					if (ID === "refrigerator") {
+						if (targetID === "refrigerator_LT") activeObjetSelector = '<i>Top</i> Left Panel';
+						if (targetID === "refrigerator_LB") activeObjetSelector = '<i>Bottom</i> Left Panel';
+						if (targetID === "refrigerator_RB") activeObjetSelector = '<i>Bottom</i> Right Panel';
+
+						for (var i = 0; i < configData.object.length; i++) {
+							if (configData.object[i].id === "refrigerator") {
+								panel_price = configData.object[i].price.panel;
+							}
+						}
+						outputTitleHtml += "<strong>Customise your material and colours</strong>";
+						outputTitleHtml += "<span> " + activeObjetSelector + "</span>";
+						// outputTitleHtml += "<em><span>Cost for color change</span> (Panel + Service cost)<br>";
+						// outputTitleHtml += panel_price;
+						// moTitle += outputTitleHtml // 모바일 title 추가
+					}
+
+					if (ID === "refrigerator_convertible") {
+						//@2022-06-09 카피 수정 (s)
+						if (targetID === "refrigerator_convertible_L") activeObjetSelector = "Single Door Fridge";
+						if (targetID === "refrigerator_convertible_M") activeObjetSelector = "Upright Freezer ";
+						//@2022-06-09 카피 수정 (e)
+
+						for (var i = 0; i < configData.object.length; i++) {
+							if (configData.object[i].id === "refrigerator_convertible") {
+								panel_price = configData.object[i].price.panel;
+							}
+						}
+						outputTitleHtml += "<strong>Customise your material and colours</strong>";
+						outputTitleHtml += "<span> " + activeObjetSelector + "</span>";
+						// moTitle += outputTitleHtml // 모바일 title 추가
+					}
+					// $(".select_objet > div").length < 1 && $(".select_objet").prepend('<div></div>'); // 모바일 타이틀 영역 추가
+					// document.querySelector('.select_objet > div').innerHTML = moTitle; 
+
+				} else {
+					outputTitleHtml += "Materials and colors";
+				}
+
+				objectColorPopupTitle.innerHTML = outputTitleHtml;
+				//@2022-05-18 선택값에 따라 select_objet 타이틀 변경 (e)
 			}
 			/* 220607 end */
 
@@ -2614,10 +2635,6 @@ var userSelectedModelData = [];
 						objects[i].classList.remove('select');
 					}
 				}
-
-				$("#refrigerator_LT").val(null);
-				$("#refrigerator_LB").val(null);
-				$("#refrigerator_RB").val(null);
 				// 팝업 숨김
 				$(".color_warning_popup").closest(".layer_popup").fadeOut();
 			});
@@ -2626,27 +2643,18 @@ var userSelectedModelData = [];
 
 			//@2022-05-18 본품컬러 일괄선택 기능추가 (s)
 			// 본품 컬러 선택하기 버튼
-			$("body").on("click", ".btn_try", function () {
-				let mainColorSetID = $(this).attr('data-setting-btn');
+			$(".mainColorSet").on("click", function () {
+				let mainColorSetID = $(this).attr('id');
 				mainColorFun(mainColorSetID);
 			});
 
 			function mainColorFun(btnID) {
-				var tmpObject = document.querySelectorAll('.btn-objet');
 				let selectColor;
 				if (btnID === 'refrigeratorSetBtn') {
 					// 장바구니 데이터 삭제
 					for (var i = 0; i < userSelectedModelData.length; i++) {
 						if (userSelectedModelData[i].selectedObject_id == "refrigerator") userSelectedModelData.splice(i, 1);
 					}
-
-					// select 클래스 추가
-					for (var i = 0; i < objects.length; i++) {
-						if (objects[i].getAttribute('data-object') === 'refrigerator') {
-							objects[i].classList.add('select');
-						}
-					}
-
 					// Mist Glass 선택 후 본품컬러(Solid Metal) 선택시 기능막혀있는 부분 예외처리
 					simulator.resetSelectedObject('refrigerator');
 					// simulator.resetSelectedObject('refrigerator','refrigerator_LT');
@@ -2660,14 +2668,6 @@ var userSelectedModelData = [];
 					simulator.setObject('refrigerator', 'refrigerator_LB', 'st_silver');
 					simulator.setObject('refrigerator', 'refrigerator_RB', 'st_silver');
 
-					// colorcode 추가
-					for (var i = 0; i < tmpObject.length; i++) {
-						if (tmpObject[i].classList.contains('active')) {
-							colorPanelHistory.prevSelectColorCode = tmpObject[i].getAttribute('data-color-code');
-						}
-					}
-
-
 					/* 220524 start Select 를 눌렀을때 선택유도 표시 삭제 */
 					// $('a[data-object="refrigerator"]').removeClass("object-anchor");
 					/* 220524 end Select 를 눌렀을때 선택유도 표시 삭제 */
@@ -2680,7 +2680,6 @@ var userSelectedModelData = [];
 					simulator.setObject('refrigerator_convertible', 'refrigerator_convertible_M', 'st_silver');
 					$("#refrigerator_convertible_M").val("st_silver");
 				}
-
 				// 현재 선택된 컬러 값
 				for (let i = 0; i < objects.length; i++) {
 					if (objects[i].classList.contains('active')) {
@@ -2844,9 +2843,6 @@ var userSelectedModelData = [];
 
 			if (!stageSetting.simulatorSidebar.classList.contains('active')) {
 				stageSetting.simulatorSidebar.classList.add('active');
-				/* 220622 모바일 다운로드 버튼 수정 start */
-				$(".img-download").addClass("active");
-				/* 220622 모바일 다운로드 버튼 수정 end */
 				for (var i = 0; i < subIndexList.length; i++) {
 					if (i == selectedIndex) {
 						if (!subIndexList[i].classList.contains('active'))
@@ -2860,12 +2856,6 @@ var userSelectedModelData = [];
 		},
 		hideRightSideOptions: function () {
 			document.querySelector('.select_objet').classList.remove('active');
-
-			/* 220622 모바일 다운로드 버튼 수정 start */
-			if ($(".img-download").hasClass("active")) {
-				$(".img-download").removeClass("active");
-			}
-			/* 220622 모바일 다운로드 버튼 수정 end */
 
 			if (stageSetting.simulatorSidebar.classList.contains('active')) {
 				stageSetting.simulatorSidebar.classList.remove('active');

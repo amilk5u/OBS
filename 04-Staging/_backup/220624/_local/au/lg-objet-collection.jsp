@@ -175,8 +175,8 @@
 								<div class="title">
 									<h2>Built for performance. Styled by you.</h2>
 									<p class="sb_txt">
-										<span> Interchangeable panels allow you to customise your LG Objet Collection® fridge and freezer with a choice of colours and finishes. </span>
-										<span> Explore LG Objet Collection® below and customise to suit your style via the Virtual Experience.*
+										<span> Interchangeable panels allow you to customise your LG Objet® Collection fridge and freezer with a choice of colours and finishes. </span>
+										<span> Explore LG Objet® Collection below and customise to suit your style via the Virtual Experience.*
 									</p>
 									</span>
 								</div>
@@ -208,7 +208,7 @@
 							<div id="innerSimulatorPrev" class="inner_contents">
 								<div class="title">
 									<!-- @2022-06-07 타이틀 위첨자 수정 (s) -->
-									<h2>Make it your own <br>with LG Objet Collection<sup>®</sup></h2>
+									<h2>Make it your own <br>with LG Objet<sup>®</sup> Collection</h2>
 									<p class="body-copy"><button type="button" data-link-name="move to Virtual Experience"><span>Virtual Experience</span></button></p>
 									<!-- @2022-06-07 타이틀 위첨자 수정 (e) -->
 								</div>
@@ -275,9 +275,7 @@
 										<div class="select_objet" data-simulator-sidebar="">
 											<ul class="select_objet_list">
 												<li class="type01">
-													<!-- @2022-06-24 모바일 스크롤 오류 마크업 수정 (s) -->
-													<!-- <h3 class="h3Tile" data-simulator-sidebar-title="">Materials and colors</h3> -->
-													<!-- @2022-06-24 모바일 스크롤 오류 마크업 수정 (e) -->
+													<h3 class="h3Tile" data-simulator-sidebar-title="">Materials and colors</h3>
 													<div class="objet-bx" data-simulator-sidebar-selector-area="">
 														<!-- simulator.js 동적 DATA 부 -->
 													</div>
@@ -405,7 +403,7 @@
 												<ul>
 													<li><button type="button" class="btn-nav s_kitchen" id="si_nav01" data-slide-index="0">Kitchen</button></li>
 													<!-- <li><button type="button" class="btn-nav s_utility" id="si_nav02" data-slide-index="1">Utility Room</button></li>
-														<li><button type="button" class="btn-nav s_living" id="si_nav03" data-slide-index="2">Living Room</button></li> -->
+										<li><button type="button" class="btn-nav s_living" id="si_nav03" data-slide-index="2">Living Room</button></li> -->
 												</ul>
 											</div>
 										</div>
@@ -480,7 +478,7 @@
 											<div class="pop_inner">
 												<div class="pop_tit">
 													<!-- @2022-06-07 타이틀 위첨자 수정 (s) -->
-													<h2>LG Objet Collection<sup>®</sup></h2>
+													<h2>LG Objet<sup>®</sup> Collection </h2>
 													<!-- @2022-06-07 타이틀 위첨자 수정 (e) -->
 												</div>
 												<div class="pop_cont">
@@ -643,26 +641,26 @@
 										</li>
 										<li>
 											<a href="https://www.lg.com/au/objet-collection/lg-mp-l386" data-link-name="move to larder">
-												<!-- @2022-06-23 Coming Soon 변경 (s) -->
-												<div class="default_cont comingSoon_cont">
+												<div class="default_cont">
+													<!-- @2022-06-16 Coming Soon 추가 (s) -->
 													<span class="coming_label">Coming Soon</span>
+													<!-- @2022-06-16 Coming Soon 추가 (e) -->
 													<img src="./images/objet/pic_product01.png" alt="Single Door Fridge" class="default_img" />
 													<img src="./images/objet/pic_product01_hover.png" alt="Single Door Fridge" class="hover_img" />
 													<p class="eng_name">Single Door Fridge</p>
 												</div>
-												<!-- @2022-06-16 Coming Soon 변경 (e) -->
 											</a>
 										</li>
 										<li>
 											<a href="https://www.lg.com/au/freezers/lg-mp-f324" data-link-name="move to freezer">
-												<!-- @2022-06-23 Coming Soon 변경 (s) -->
-												<div class="default_cont comingSoon_cont">
+												<div class="default_cont">
+													<!-- @2022-06-16 Coming Soon 추가 (s) -->
 													<span class="coming_label">Coming Soon</span>
+													<!-- @2022-06-16 Coming Soon 추가 (e) -->
 													<img src="./images/objet/pic_product02.png" alt="Upright Freezer" class="default_img" />
 													<img src="./images/objet/pic_product02_hover.png" alt="Upright Freezer" class="hover_img" />
 													<p class="eng_name">Upright Freezer</p>
 												</div>
-												<!-- @2022-06-23 Coming Soon 변경 (e) -->
 											</a>
 										</li>
 										<!-- @2022-05-27 링크 수정 (e) -->
@@ -789,12 +787,12 @@
 										<dl>
 											<dt>
 												<button type="button">
-													<p>How can I get an indication of shipping times on Objet Collection® products?</p>
+													<p>How can I get an indication of shipping times on Objet® Collection products?</p>
 												</button>
 											</dt>
 											<dd>
 												<p class="answer">
-													<span>Delivery of customised LG Objet Collection® order is dependent on stock availability of the product and colour panels at time of purchase.</span>
+													<span>Delivery of customised LG Objet® Collection order is dependent on stock availability of the product and colour panels at time of purchase.</span>
 													<span>If you select standard colour options as indicated on the product pages, estimated shipping timing will be within 1 week from the purchase date.</span>
 													<span>Estimated shipping for customised order with colour panels and product in stock is up to 4 weeks from purchase date.</span>
 													<span>Colour panels or products that are out of stock will be indicated as not available on the website and you will not be able to add the item to your cart.</span>
@@ -810,7 +808,7 @@
 										<dl>
 											<dt>
 												<button type="button">
-													<p>What is the number / email address for customer enquiries for Objet Collection® products?</p>
+													<p>What is the number / email address for customer enquiries for Objet® Collection products?</p>
 												</button>
 											</dt>
 											<dd>
@@ -831,7 +829,7 @@
 												</button>
 											</dt>
 											<dd>
-												<p class="answer">Unfortunately, only same finish will be available to match, however there is a selection of colours within each of the finishes to build your Objet Collection® product to match your taste.</p>
+												<p class="answer">Unfortunately, only same finish will be available to match, however there is a selection of colours within each of the finishes to build your Objet® Collection product to match your taste.</p>
 											</dd>
 										</dl>
 										<dl>
@@ -862,8 +860,8 @@
 											</dt>
 											<dd>
 												<p class="answer">
-													<span>A) If you select customised colour option at initial purchase, LG will fit the selected colour panels to your Objet Collection® appliance prior to shipping. You do not have to do anything.</span>
-													<span>B) If you would like to change the colour panels of your existing Objet Collection® appliance in the future, you will need to arrange for an LG Authorised Service Agent to fit the new colour panels. LG does not recommend self-installation of the panels.</span>
+													<span>A) If you select customised colour option at initial purchase, LG will fit the selected colour panels to your Objet® Collection appliance prior to shipping. You do not have to do anything.</span>
+													<span>B) If you would like to change the colour panels of your existing Objet® Collection appliance in the future, you will need to arrange for an LG Authorised Service Agent to fit the new colour panels. LG does not recommend self-installation of the panels.</span>
 													<span>C) Please contact LG Customer Care for quotes on colour panels and cost of panel fit service using an LG Authorised Service Agent.</span>
 													<span class="in_desc">
 														<span> Email : <em><a href="mailto:obsanz@lge.com">obsanz@lge.com</a></em></span>
@@ -882,7 +880,7 @@
 											<dd>
 												<p class="answer">
 													<span>A) If you select customised colour when you make the initial purchase, there will be no extra charge.</span>
-													<span>B) If you wish to change colour panels of your existing Objet Collection® appliance in the future, please contact LG Customer Care for queries on the cost of new colour panels, service fees for a panel fit service and to arrange a panel fit service by an LG Authorised Service Agent:</span>
+													<span>B) If you wish to change colour panels of your existing Objet® Collection appliance in the future, please contact LG Customer Care for queries on the cost of new colour panels, service fees for a panel fit service and to arrange a panel fit service by an LG Authorised Service Agent:</span>
 													<span class="in_desc">
 														<span> Email : <em><a href="mailto:obsanz@lge.com">obsanz@lge.com</a></em></span>
 														<span> Live Chat : <em><a href="https://www.lg.com/au/support/chat-email" target="_blank" title="https://www.lg.com/au/support/chat-email">https://www.lg.com/au/support/chat-email</a></em> </span>
@@ -894,12 +892,12 @@
 										<dl>
 											<dt>
 												<button type="button">
-													<p>Can I change the colour panels of my existing Objet Collection® appliance in future?</p>
+													<p>Can I change the colour panels of my existing Objet® Collection appliance in future?</p>
 												</button>
 											</dt>
 											<dd>
 												<p class="answer">
-													<span>A) Yes you can. Colour panels are available for purchase via LG Online Store and you will need to arrange for an LG Authorised Service Agent to fit the new colour panels onto your existing Objet Collection® appliance. Service fees apply for the panel fit service.</span>
+													<span>A) Yes you can. Colour panels are available for purchase via LG Online Store and you will need to arrange for an LG Authorised Service Agent to fit the new colour panels onto your existing Objet® Collection appliance. Service fees apply for the panel fit service.</span>
 													<span>B) LG does not recommend self-installation of the new colour panels and is not responsible for any damages/product faults directly or indirectly resulted from the self-change.</span>
 													<span>C) Please contact LG Customer Care for queries on the cost of new colour panels, service fees for a panel fit service and to arrange a panel fit service by an LG Authorised Service Agent.</span>
 													<span class="in_desc">
@@ -918,9 +916,9 @@
 											</dt>
 											<dd>
 												<p class="answer">
-													<span>LG does not provide sample/swatch of the Objet Collection®. However, you will be able to simulate your desired custom colour options at LG Objet Collection® Virtual Experience Zone.</span>
-													<span>LG Objet Collection® Virtual Experience Zone : <a href="https://www.lg.com/au/lg-objet-collection">https://www.lg.com/au/lg-objet-collection</a></span>
-													<span>Please note that the LG Objet Collection® Virtual Experience Zone is intended for illustration purposes only and actual colours may vary in contrast with real surroundings.</span>
+													<span>LG does not provide sample/swatch of the Objet® Collection. However, you will be able to simulate your desired custom colour options at LG Objet® Collection Virtual Experience Zone.</span>
+													<span>LG Objet® Collection Virtual Experience Zone : <a href="https://www.lg.com/au/lg-objet-collection">https://www.lg.com/au/lg-objet-collection</a></span>
+													<span>Please note that the LG Objet® Collection Virtual Experience Zone is intended for illustration purposes only and actual colours may vary in contrast with real surroundings.</span>
 												</p>
 											</dd>
 										</dl>
@@ -932,22 +930,22 @@
 											</dt>
 											<dd>
 												<p class="answer">
-													<span>LG does not provide certain Pantone colours. Please visit LG Objet Collection® Virtual Experience Zone to build your desired custom colour options.</span>
-													<span>LG Objet Collection® Virtual Experience Zone : <a href="https://www.lg.com/au/lg-objet-collection">https://www.lg.com/au/lg-objet-collection</a></span>
-													<span>Please note that the LG Objet Collection® Virtual Experience Zone is intended for illustration purposes only and actual colours may vary in contrast with real surroundings.</span>
+													<span>LG does not provide certain Pantone colours. Please visit LG Objet® Collection Virtual Experience Zone to build your desired custom colour options.</span>
+													<span>LG Objet® Collection Virtual Experience Zone : <a href="https://www.lg.com/au/lg-objet-collection">https://www.lg.com/au/lg-objet-collection</a></span>
+													<span>Please note that the LG Objet® Collection Virtual Experience Zone is intended for illustration purposes only and actual colours may vary in contrast with real surroundings.</span>
 												</p>
 											</dd>
 										</dl>
 										<dl>
 											<dt>
 												<button type="button">
-													<p>How do I clean the LG Objet Collection® product?</p>
+													<p>How do I clean the LG Objet® Collection product?</p>
 												</button>
 											</dt>
 											<dd>
 												<p class="answer">
 													<span>A) For the appliance exterior, use a clean sponge or soft cloth and a mild detergent in warm water. Do not use abrasive or harsh cleaners. Dry thoroughly with a soft cloth. Do not use contaminated cloths when cleaning the stainless steel doors. Always use a dedicated cloth and wipe in the same direction as the grain. This helps reduce surface staining and tarnishing.</span>
-													<span>B) Please refer to the Owner’s Manual for more detailed cleaning guide for your LG Objet Collection® product.</span>
+													<span>B) Please refer to the Owner’s Manual for more detailed cleaning guide for your LG Objet® Collection product.</span>
 												</p>
 											</dd>
 										</dl>
@@ -960,7 +958,7 @@
 											<dd>
 												<p class="answer">
 													<span>A) If you wish to make a return, please refer to ‘Change of mind’ condition from LG Terms and Conditions of Sale available at <a href=" https://www.lg.com/au/terms-and-conditions-of-sale">https://www.lg.com/au/terms-and-conditions-of-sale</a> or contact the LG Customer Care Team on 1300 54 22 73 (Option 5).</span>
-													<span>B) If you wish to change the colour panels, please contact LG Customer Care to obtain a quote on the cost to change the colour panels on your LG Objet Collection® product. Service fees apply fora panel fit service as you will need to arrange for an LG Authorised Service Agent to fit the new colour panels.</span>
+													<span>B) If you wish to change the colour panels, please contact LG Customer Care to obtain a quote on the cost to change the colour panels on your LG Objet® Collection product. Service fees apply fora panel fit service as you will need to arrange for an LG Authorised Service Agent to fit the new colour panels.</span>
 													<span class="in_desc">
 														<span> Email : <em><a href="mailto:obsanz@lge.com">obsanz@lge.com</a></em></span>
 														<span> Live Chat : <em><a href="https://www.lg.com/au/support/chat-email" target="_blank" title="https://www.lg.com/au/support/chat-email">https://www.lg.com/au/support/chat-email</a></em> </span>
@@ -1006,7 +1004,7 @@
 								<div class="container-fluid">
 									<div class="footer-box">
 										<div class="footer-component">
-											<div class="footer-caution"> *LG Objet Collection® comes in colour configuration indicated in product name if no custom panels are selected. Custom panels can be selected at checkout and will be fitted to your LG Objet Collection® product prior to dispatch as part of the initial purchase price. Delivery of customised order is dependent on stock availability of the colour panels at time of purchase. Estimated delivery for customised order with colour panels in stock is up to 4 weeks from purchase date. Please contact LG support team at obsanz@lge.com for any queries including orders, specific requirements and indicative delivery timeframes. </div>
+											<div class="footer-caution"> *LG Objet® Collection comes in colour configuration indicated in product name if no custom panels are selected. Custom panels can be selected at checkout and will be fitted to your LG Objet® Collection product prior to dispatch as part of the initial purchase price. Delivery of customised order is dependent on stock availability of the colour panels at time of purchase. Estimated delivery for customised order with colour panels in stock is up to 4 weeks from purchase date. Please contact LG support team at obsanz@lge.com for any queries including orders, specific requirements and indicative delivery timeframes. </div>
 										</div>
 									</div>
 								</div>

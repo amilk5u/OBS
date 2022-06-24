@@ -639,9 +639,7 @@
 .simulator_nav .active .btn-nav { text-decoration: underline; }
 .select_objet:after { background:transparent; }
 
-
-/* @2022-06-24 모바일 스크롤 오류 스타일 수정 (s) */
-.select_objet_list .objet-bx {overflow:visible !important;}
+/* @2022-06-03 옵션 버튼 스타일 변경 (s) */
 .select_objet.active > div { display: none; }
 .select_objet_list .type01 .h3Tile { font-size:22px; font-weight:700; color:#181818; text-align:center; }
 .select_objet_list .type01 .h3Tile > span { display:block; color:#686868; font-size: 17px; font-weight:600; }
@@ -650,21 +648,26 @@
 .select_objet .main_tooltip { padding: 0 0 5px; font-size: 19px; font-weight: 600; color: #2e2e2e; text-align: center; }
 .select_objet .collection_wrap { padding:0 0 30px; }
 .select_objet .collection_wrap .main_tooltip { padding: 0 0 10px; }
-.select_objet .collection_wrap .main_color_wrap { padding:0 5px; border:1px solid #eeedee; padding:10px; border-radius: 20px; box-sizing: border-box; box-shadow: 0 5px 10px #e1e1e1; }
+.select_objet .collection_wrap .main_color_wrap { width:90%; margin:0 auto; border:1px solid #eeedee; padding:10px; border-radius: 20px; box-sizing: border-box; box-shadow: 0 5px 10px #e1e1e1; }
 .select_objet .collection_wrap .main_color_wrap:after { content: ""; display: block; clear: both; }
 .select_objet .collection_wrap .main_color_wrap .img_wrap { width:100px; display: flex; float:left; padding:14px 0; background-color: #f2f2f2; border-radius: 20px; }
 .select_objet .collection_wrap .main_color_wrap .img_wrap img { height:80px; display: block; margin:0 auto; }
-.select_objet .collection_wrap .main_color_wrap .txt_wrap { width:216px; height:108px; float:left; padding:0 0 0 10px; box-sizing: border-box; position: relative; }
+
+/* @2022-06-09 옵션 카피 변경 (s) */
+.select_objet .collection_wrap .main_color_wrap .txt_wrap { width:210px; height:108px; float:left; padding:0 0 0 10px; box-sizing: border-box; position: relative; }
 .select_objet .collection_wrap .main_color_wrap .txt_wrap span { color:#2e2e2e; font-size: 15px; font-weight: 700; line-height: 19px; display: block; }
 .select_objet .collection_wrap .main_color_wrap .txt_wrap p { color:#686868; font-size: 13px; font-weight: 600; line-height: 15px; }
-/* @2022-06-24 모바일 스크롤 오류 스타일 수정 (e) */
-
 .select_objet .collection_wrap .main_color_wrap .txt_wrap span.price_num { padding:3px 0 0; color:#767676; font-size: 16px; font-weight: 700; display: block; }
 .select_objet .collection_wrap .main_color_wrap .btn_wrap { display: flex; padding:3px 0 0; justify-content: end; position: absolute; bottom: 0; right: 0; }
+/* @2022-06-09 옵션 카피 변경 (e) */
+
 .select_objet .collection_wrap .main_color_wrap .btn_wrap button { padding:3px 12px; border-radius: 50px; background-color: #a50034; color:#fff; font-size: 13px; margin:0 5px 0 0; }
 .select_objet .collection_wrap .main_color_wrap .btn_wrap a { padding:3px 12px; border-radius: 50px; background-color: #a50034; color:#fff; font-size: 13px; margin:0 5px 0 0; font-family:'Noto Sans KR', Helvetica, sans-serif; }
 .select_objet .type01 .objet-bx .scroll-content { height:auto; white-space: normal; padding:0 0 30px; }
 .select_objet .type01 .objet-bx .scroll-content .select_objet_item { width: 100% !important; padding:20px 20px 0; margin:0 auto; }
+/* @2022-06-03 옵션 버튼 스타일 변경 (e) */
+
+
 .select_objet_item .name { padding-top:0; white-space: nowrap; }
 .select_objet_item .btn-Tooltip { top:50%; transform:translateY(-50%); }
 .select_objet_item > ul { overflow: visible; }
@@ -678,43 +681,49 @@
 .objet label .spot { display:none; }
 
 @media screen and (max-width: 767px){
-/* @2022-06-24 모바일 스크롤 오류 스타일 수정 (s) */
-.select_objet_list .objet-bx {overflow:hidden !important;}
-.select_objet.active{left:15px;right:15px;bottom:15px;transform: translateY(0);}
-.select_objet.active .objet-bx{width:auto;}
-/*.select_objet_list .type01 .h3Tile{display:none;}*/
-.select_objet .type01 .objet-bx .scroll-content{padding:10px;white-space: nowrap;}
-.select_objet .type01 .objet-bx .scroll-content .select_objet_item{ width:auto !important; display:inline-block;}
-.select_objet .type01 .objet-bx .scroll-content .select_objet_item + .select_objet_item{margin-left:20px;margin-top:0px;}
-.select_objet_item > ul { margin:5px 0 0; }
-.select_objet_item > ul > li{width:50px;}
-.select_objet_item > ul  li .btn-objet{width:50px;padding-top:50px;font-size:12px;background-size:43px;}
-.select_objet_item > ul > li .btn-objet:after{width:47px;padding-top:47px;left:50%;transform:translateX(-50%);}
-.select_objet.active { width:auto !important; padding:20px 15px 0 5px; }
-.select_objet .type01 .objet-bx .scroll-content .select_objet_item { padding:0;}
-.select_objet .btn-close {top:7px; right:10px; }
-.select_objet .collection_wrap { max-width:290px; min-width:260px; display:inline-block; vertical-align:top; padding:0; margin:20px 0 0; }
-.select_objet .collection_wrap > p { padding: 0 0 10px; text-align:left; font-size: 20px; line-height: 20px; }
-.select_objet .collection_wrap > p.only_pc { display:none; }
-.select_objet .collection_wrap .main_tooltip { font-size: 15px; text-align: left; width: fit-content; margin: 0 auto; padding: 0 0 10px; }
-.select_objet .collection_wrap .main_color_wrap .img_wrap { width:75px; padding:16px 0; border-radius:10px; }
-.select_objet .collection_wrap .main_color_wrap .img_wrap img { height:57px; }
-.select_objet .collection_wrap .main_color_wrap .txt_wrap { width:calc(100% - 75px); height:90px; padding:0 0 0 5px; white-space:normal; }
-.select_objet .collection_wrap .main_color_wrap .txt_wrap span  { color: #2e2e2e; font-size: 14px; font-weight: 700; line-height: 16px; display: block; }
-.select_objet .collection_wrap .main_color_wrap .txt_wrap span.prd_title { display:block; line-height:14px; padding:0 0 5px; }
-.select_objet .collection_wrap .main_color_wrap .txt_wrap span.price_num { padding:0; font-size:14px; }
-.select_objet .collection_wrap .main_color_wrap .txt_wrap p { font-size:11px; line-height:13px; padding:2px 0; }
-.select_objet .collection_wrap .main_color_wrap .btn_wrap .small_panel img { width:15px }
-.select_objet .collection_wrap .main_color_wrap .btn_wrap a { font-size: 12px; padding:2px 11px 4px; }
-.select_objet .collection_wrap .main_color_wrap .btn_wrap button { font-size: 12px; padding:2px 11px 4px; }
-.select_objet .color_select_wrap { display:inline-block; vertical-align:top; position:relative; padding:45px 0 0; margin:0 0 0 10px; }
-.select_objet .color_select_wrap .h3Tile { position:absolute; top:0; left:0; padding:0; text-align: left; }
-.select_objet_list .type01 .h3Tile > span { font-size:14px; }
-.select_objet_list .type01 .h3Tile > strong  { font-size: 18px; line-height: 20px; }
-#purchase_popup .purchase_list ul li { flex:.5; } 
-#purchase_popup .purchase_list ul li .pic_box { width:35vw; }
-/* #innerSimulator .simulator.full .objet_select_slider .img-download { bottom:50px; } */
-/* @2022-06-24 모바일 스크롤 오류 스타일 수정 (e) */
+	.bg_type_sel.type02 .objet-bx > ul { padding:25px 20px 0 20px; }
+	.bg_type_sel.type02 .objet-bx > ul > li button { width:70px; padding-top:70px; }
+	.bg_type_sel.type02 .objet-bx > ul > li button:after { padding-top:70px; }
+	.select_objet.active .objet-bx { width:auto; }
+
+
+	/* @2022-06-03 옵션 버튼 스타일 변경 (s) */
+	.select_objet.active { width: auto !important; left:15px; right:15px; bottom:15px; transform: translateY(0); padding:0; }
+	/* .select_objet.active > div { width:100%; position: absolute; top: 5px; text-align: center; display: block; }
+    .select_objet.active > div strong { font-size: 19px; color: #2e2e2e; line-height: 20px; display: block; font-weight: 700; }
+    .select_objet.active > div span { width: fit-content; display: block; color: #686868; font-size: 15px; font-weight: 600; margin: 0 auto; }
+    .select_objet.active > div span i { color: #a50034; font-style: normal; } */
+	.select_objet_list .type01 .h3Tile { position: absolute; top: -19px; left: 400px; z-index: 5; text-align: left; }
+	.select_objet_list .type01 .h3Tile > strong { font-size: 18px; line-height: 20px; }
+	.select_objet_list .type01 .h3Tile > span { font-size: 14px; }
+	.select_objet_list .type01 { padding:0; display: flex;  }
+	.select_objet_list .type01 .objet-bx .scroll-content { padding:10px; white-space: nowrap; display: flex; }
+	.select_objet .select_objet_list { display: flex; overflow-x: scroll; overflow-y: hidden; padding-top:35px; }
+	.select_objet .select_objet_list:after { display: block; content: ""; clear: both; }
+	.select_objet .collection_wrap { width: auto !important; display:inline-block; padding:0; padding:10px 20px 0 30px; }
+	.select_objet .collection_wrap .main_tooltip { font-size: 15px; text-align: left; width: fit-content; margin: 0 auto; padding: 0 0 10px; }
+	.select_objet .collection_wrap .main_color_wrap { width:310px !important; margin:5px 10px 20px 0; border-radius: 10px; padding:8px; }
+
+	/* @2022-06-09 옵션 카피 변경 (s) */
+	.select_objet .collection_wrap .main_color_wrap .txt_wrap { width:207px; height:98px; float:left; padding:0 0 0 10px; box-sizing: border-box; }
+	/* @2022-06-09 옵션 카피 변경 (e) */
+
+	.select_objet .collection_wrap .main_color_wrap .txt_wrap span.price_num { padding:0; }
+	.select_objet .collection_wrap .main_color_wrap .img_wrap { width:85px; padding:13px 0; border-radius: 10px; }
+	.select_objet .collection_wrap .main_color_wrap .img_wrap img { height:73px; }
+	.select_objet .collection_wrap .main_color_wrap .btn_wrap { padding:0; }
+	.select_objet .collection_wrap .main_color_wrap .btn_wrap button { font-size: 12px; padding:2px 11px 4px; }
+	.select_objet .collection_wrap .main_color_wrap .btn_wrap a { font-size: 12px; padding:2px 11px 4px; }
+	/* @2022-06-03 옵션 버튼 스타일 변경 (e) */
+
+
+	.select_objet_item > ul > li { width:50px; }
+	.select_objet_item > ul > li .btn-objet { width:50px; padding-top:50px; font-size:12px; background-size:43px; }
+	.select_objet_item > ul > li .btn-objet:after { width:47px; padding-top:47px; left:50%; transform:translateX(-50%); }
+
+	#purchase_popup .purchase_list ul li { flex:.5; }
+	#purchase_popup .purchase_list ul li .pic_box { width:35vw; }
+	#innerSimulator .simulator.full .objet_select_slider .img-download { bottom:50px; }
 }
 @media screen and (min-width: 768px){
 	.select_objet .type01 .objet-bx .scroll-content { transform:translate3D(0,0,0) !important; }
